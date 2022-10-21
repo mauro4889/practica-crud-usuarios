@@ -5,7 +5,7 @@ import { UsersController } from "../controllers/users.controller";
 const router = Router();
 
 router.post('/', UsersController.create)
-router.get('/')
-router.get('/')
+router.get('/', UsersController.getAll)
+router.get('/:ID', UsersController.getId)
 
 export default router

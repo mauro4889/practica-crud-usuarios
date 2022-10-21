@@ -14,4 +14,15 @@ export class UsersController{
         })
         res.send(data)
     }
+
+    public static async getAll(req: Request, res: Response){
+        const getData = await UserService.getAll()
+        res.status(getData.success ? 200 : 400).send(getData)
+    }
+
+    public static async getId(req: Request, res: Response){
+        const getId = await UserService.getId(req.params.id)
+        console.log(req.params)
+        res.status(getId.success ? 200 : 400).send(getId)
+    }
 }
